@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?x642w1');
-  src:  url('fonts/icomoon.eot?x642w1#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?x642w1') format('truetype'),
-    url('fonts/icomoon.woff?x642w1') format('woff'),
-    url('fonts/icomoon.svg?x642w1#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?xv4qzg');
+  src:  url('fonts/icomoon.eot?xv4qzg#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?xv4qzg') format('truetype'),
+    url('fonts/icomoon.woff?xv4qzg') format('woff'),
+    url('fonts/icomoon.svg?xv4qzg#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,6 +25,22 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-users-1new:before {
+  content: "\e906";
+  color: #f5f5f5;
+}
+.icon-Vectornew:before {
+  content: "\e907";
+  color: #f5f5f5;
+}
+.icon-Vectornew-1:before {
+  content: "\e908";
+  color: #f5f5f5;
+}
+.icon-Vectornew-2:before {
+  content: "\e909";
+  color: #f5f5f5;
+}
 .icon-steam2:before {
   content: "\e900";
   color: #61a568;

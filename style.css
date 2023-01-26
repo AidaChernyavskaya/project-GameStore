@@ -8,6 +8,7 @@
   font-size: 4rem;
   font-weight: 700;
   color: #F5F5F5;
+  line-height: 100%;
 }
 
 .title-3 {
@@ -22,11 +23,22 @@
   color: #61A568;
 }
 
+.title-4 {
+  font-weight: 300;
+  font-size: 1.9rem;
+  text-transform: uppercase;
+  color: #61A568;
+}
+
 .features__text {
   font-size: 1.6rem;
   font-weight: 400;
   color: #425844;
   line-height: 113%;
+}
+
+.margin-bottom-30px {
+  margin-bottom: 3rem;
 }
 
 *, ::after, ::before {
@@ -43,7 +55,7 @@ body {
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
   font-size: 1.6rem;
-  color: #AAAAAA;
+  color: #F5F5F5;
   background: #F5F5F5;
 }
 
@@ -92,10 +104,44 @@ body {
 .banner-img {
   background: #101D2C;
   grid-area: 3/sidebar-end/4/col-end 4;
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  grid-template-rows: repeat(24, 1fr);
+  background: url("img/background.png") center/cover no-repeat;
+}
+.banner-img__img-1 {
+  width: 100%;
+  grid-area: 3/3/12/15;
+}
+.banner-img__img-2 {
+  width: 100%;
+  grid-area: 10/5/23/-1;
+  transform: translateX(3.5rem);
 }
 .banner-text {
   background: #101D2C;
   grid-area: 3/col-start 5/4/full-end;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0 4vw;
+}
+.banner-text__text {
+  margin-bottom: 4rem;
+}
+
+.btn {
+  font-weight: 700;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  color: #F5F5F5;
+  background: #61A568;
+  padding: 1.5rem 3rem;
+  cursor: pointer;
+}
+.btn:hover {
+  background: #425844;
 }
 
 .cards {
