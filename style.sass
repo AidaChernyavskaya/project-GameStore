@@ -86,12 +86,53 @@ body
   background: $color-primary
   padding: 1.5rem 3rem
   cursor: pointer
+  outline: none
+  border: none
   &:hover
     background: $color-primary-dark
 
 .cards
   background: $color-white
   grid-area: 4 / col-start 1 / 5 / col-end 8
+  display: grid
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr))
+  gap: 4rem 6rem
+  margin-top: 15rem
+  margin-bottom: 15rem
+
+.card
+  background: $color-blue-dark
+  display: grid
+  grid-template-columns: repeat(2, 1fr)
+  &__img
+    width: 100%
+    grid-column: 1 / -1
+  &__icon
+    font-size: 2rem
+  &__title
+    font-weight: 700
+    font-size: 1.6rem
+    color: $color-white
+    padding: 1.5rem
+    text-align: center
+    width: 80%
+    background: $color-primary-dark
+    grid-column: 1 / -1
+    justify-self: center
+    transform: translateY(-50%)
+  &__btn
+    grid-column: 1/-1
+  &__location
+  &__players
+  &__card
+  &__monitor
+  &__icon
+    margin-right: 1rem
+
+.content
+  display: flex
+  margin-left: 2rem
+  margin-bottom: 3rem
 
 .gallery
   background: $color-blue-dark
