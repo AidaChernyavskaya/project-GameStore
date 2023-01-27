@@ -102,6 +102,40 @@ body {
 .header {
   background: #101D2C;
   grid-area: 1/sidebar-end/2/col-end 6;
+  padding: 5rem 5rem 5rem 6rem;
+  display: grid;
+  grid-template-rows: 1fr min-content minmax(8.5rem, min-content) 1fr;
+  background: url("img/header-background.png") center/cover no-repeat;
+  object-fit: cover;
+}
+.header__line-text {
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: #AAAAAA;
+  display: grid;
+  grid-template-columns: 1fr max-content 1fr;
+  grid-column-gap: 2rem;
+  align-items: center;
+  margin-bottom: 1.3rem;
+}
+.header__line-text::before, .header__line-text::after {
+  content: "";
+  height: 0.1rem;
+  display: block;
+  background-color: #AAAAAA;
+}
+.header__img {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  justify-items: center;
+}
+.header__img img {
+  height: 2.5rem;
+}
+.header button {
+  align-self: flex-start;
+  justify-self: flex-start;
 }
 
 .gamers {
