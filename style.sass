@@ -54,6 +54,7 @@ body
   grid-template-rows: 1fr min-content minmax(8.5rem, min-content) 1fr
   background: url("img/header-background.png") center / cover no-repeat
   object-fit: cover
+  z-index: 5
   &__line-text
     font-weight: 700
     font-size: 1.6rem
@@ -82,6 +83,22 @@ body
 .gamers
   background: $color-blue-dark
   grid-area: 1 /  col-start 7 / 2 / full-end
+  display: grid
+  grid-template-columns: min-content max-content
+  gap: 4rem 2rem
+  align-content: center
+  justify-content: center
+  &__title
+    grid-area: 1 / 1 / 2 / -1
+    justify-self: center
+  &__img
+    border-radius: 50%
+    width: 7rem
+    height: 7rem
+  &__text
+    align-self: center
+  &__score
+    color: $color-grey
 
 .features
   padding: 15rem 0
