@@ -74,6 +74,29 @@ body {
 .sidebar {
   background: #425844;
   grid-area: 1/sidebar-start/-1/sidebar-end;
+  padding-top: 3.7rem;
+  display: flex;
+  justify-content: center;
+}
+
+.hamburger {
+  border: none;
+  background: #F5F5F5;
+  height: 0.2rem;
+  width: 4.5rem;
+}
+.hamburger::before, .hamburger::after {
+  content: "";
+  background: #F5F5F5;
+  height: 0.2rem;
+  width: 4.5rem;
+  display: block;
+}
+.hamburger::before {
+  transform: translateY(-1.5rem);
+}
+.hamburger::after {
+  transform: translateY(1.5rem);
 }
 
 .header {

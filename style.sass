@@ -25,6 +25,26 @@ body
 .sidebar
   background: $color-primary-dark
   grid-area: 1 / sidebar-start / -1 / sidebar-end
+  padding-top: 3.7rem
+  display: flex
+  justify-content: center
+
+.hamburger
+  border: none
+  background: $color-white
+  height: .2rem
+  width: 4.5rem
+  &::before, &::after
+    content: ''
+    background: $color-white
+    height: .2rem
+    width: 4.5rem
+    display: block
+  &::before
+    transform: translateY(-1.5rem)
+  &::after
+    transform: translateY(1.5rem)
+
 
 .header
   background: $color-blue-dark
