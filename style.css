@@ -259,6 +259,43 @@ body {
 .footer {
   background: #101D2C;
   grid-area: -2/sidebar-end/-1/full-end;
+  padding: 8rem 3rem;
+  border-top: solid 0.3rem #F5F5F5;
+}
+
+.nav__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  justify-items: center;
+  gap: 3rem;
+}
+.nav__item {
+  list-style: none;
+}
+.nav__link:link, .nav__link:visited {
+  text-decoration: none;
+  font-weight: 300;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  text-align: center;
+  color: #F5F5F5;
+  display: inline-block;
+  transition: 0.3s all;
+}
+.nav__link:hover, .nav__link:active {
+  color: #AAAAAA;
+  transform: translateY(-0.3rem);
+}
+
+.logo {
+  display: block;
+  margin-bottom: 8rem;
+}
+.logo__img {
+  display: block;
+  margin: 0 auto;
+  width: 12rem;
+  height: 4rem;
 }
 
 /*# sourceMappingURL=style.css.map */

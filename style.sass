@@ -175,3 +175,36 @@ body
 .footer
   background: $color-blue-dark
   grid-area: -2 / sidebar-end / -1 / full-end
+  padding: 8rem 3rem
+  border-top: solid .3rem $color-white
+
+.nav
+  &__list
+    display: grid
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr))
+    justify-items: center
+    gap: 3rem
+  &__item
+    list-style: none
+  &__link
+    &:link, &:visited
+      text-decoration: none
+      font-weight: 300
+      font-size: 1.6rem
+      text-transform: uppercase
+      text-align: center
+      color: $color-white
+      display: inline-block
+      transition: .3s all
+    &:hover, &:active
+      color: $color-grey
+      transform: translateY(-.3rem)
+
+.logo
+  display: block
+  margin-bottom: 8rem
+  &__img
+    display: block
+    margin: 0 auto
+    width: 12rem
+    height: 4rem
