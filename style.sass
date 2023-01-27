@@ -1,6 +1,7 @@
 @import "sass-stylesheets/variables"
 @import "sass-stylesheets/typography"
 @import "sass-stylesheets/utilities"
+@import "sass-stylesheets/mixins"
 
 *, ::after, ::before
   margin: 0
@@ -9,6 +10,10 @@
 
 html
   font-size: 62.5%
+  @include respond(tab-land)
+    font-size: 50%
+  @include respond(phone)
+    font-size: 40%
 
 body
   font-family: $font-family
@@ -21,6 +26,11 @@ body
   display: grid
   grid-template-rows: 80vh min-content 40vw repeat(3,min-content)
   grid-template-columns: [sidebar-start] 8rem [sidebar-end] minmax(6rem, 1fr) [section-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [section-end] minmax(6rem, 1fr) [full-end]
+  @include respond(tab-land)
+    grid-template-rows: 6rem 80vh min-content 40vw repeat(3,min-content)
+    grid-template-columns: [sidebar-end] minmax(6rem, 1fr) [section-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [section-end] minmax(6rem, 1fr) [full-end]
+  @include respond(tab-port)
+    grid-template-rows: 6rem calc(100vh - 6rem) min-content min-content min-content 50vw repeat(4,min-content)
 
 .sidebar
   background: $color-primary-dark
@@ -28,6 +38,11 @@ body
   padding-top: 3.7rem
   display: flex
   justify-content: center
+  @include respond(tab-land)
+    grid-area: 1 / 1 / 2 / -1
+    justify-content: flex-end
+    align-items: center
+    padding: 0 3rem 0 0
 
 .hamburger
   border: none
@@ -51,10 +66,14 @@ body
   grid-area: 1 / sidebar-end / 2 / col-end 6
   padding: 5rem 5rem 5rem 6rem
   display: grid
-  grid-template-rows: 1fr min-content minmax(8.5rem, min-content) 1fr
+  grid-template-rows: 1fr min-content minmax(11rem, min-content) 1fr
   background: url("img/header-background.png") center / cover no-repeat
   object-fit: cover
   z-index: 5
+  @include respond(tab-land)
+    grid-area: 2 / sidebar-end / 3 / col-end 6
+  @include respond(tab-port)
+    grid-area: 2 / sidebar-end / 3 / full-end
   &__line-text
     font-weight: 700
     font-size: 1.6rem
@@ -84,10 +103,25 @@ body
   background: $color-blue-dark
   grid-area: 1 /  col-start 7 / 2 / full-end
   display: grid
-  grid-template-columns: min-content max-content
+  grid-template-columns: max-content
   gap: 4rem 2rem
   align-content: center
   justify-content: center
+  @include respond(tab-land)
+    grid-area: 2 /  col-start 7 / 3 / full-end
+  @include respond(tab-port)
+    grid-area: 3 /  1 / 4 / -1
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr))
+    justify-items: center
+    padding: 5rem 0
+  @include respond(phone)
+    grid-template-columns: min-content
+    justify-items: flex-start
+  &__box
+    display: grid
+    grid-template-columns: min-content max-content
+    grid-column-gap: 2rem
+
   &__title
     grid-area: 1 / 1 / 2 / -1
     justify-self: center
@@ -108,6 +142,12 @@ body
   grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr))
   gap: 3rem 4rem
   align-items: flex-start
+  @include respond(tab-land)
+    grid-area: 3 / col-start 1 / 4 / col-end 8
+  @include respond(tab-port)
+    grid-area: 4 / col-start 1 / 5 / col-end 8
+  @include respond(phone)
+    padding: 5rem 0
 
 .feature
   display: grid
@@ -118,6 +158,7 @@ body
     grid-row: 1 / span 2
     transform: translateY(-1rem)
 
+
 .banner
   &-img
     background: $color-blue-dark
@@ -126,13 +167,21 @@ body
     grid-template-columns: repeat(16, 1fr)
     grid-template-rows: repeat(24, 1fr)
     background: url("img/background.png") center / cover no-repeat
+    @include respond(tab-land)
+      grid-area: 4 / sidebar-end / 5 / col-end 4
+    @include respond(tab-port)
+      grid-area: 6 / 1 / 7 / -1
     &__img-1
       width: 100%
       grid-area: 3 / 3 / 12 / 15
+      @include respond(tab-port)
+        grid-area: 3 / 2 / 12 / 10
     &__img-2
       width: 100%
       grid-area: 10 / 5 / 23 / -1
       transform: translateX(3.5rem)
+      @include respond(tab-port)
+        grid-area: 10 / 8 / 23 / 15
   &-text
     background: $color-blue-dark
     grid-area: 3 / col-start 5 / 4 / full-end
@@ -141,6 +190,11 @@ body
     justify-content: center
     align-items: flex-start
     padding: 0 4vw
+    @include respond(tab-land)
+      grid-area: 4 / col-start 5 / 5 / full-end
+    @include respond(tab-port)
+      grid-area: 5 / 1 / 6 / -1
+      padding: 4rem
     &__text
       margin-bottom: 4rem
 
@@ -157,6 +211,7 @@ body
   &:hover
     background: $color-primary-dark
 
+
 .cards
   background: $color-white
   grid-area: 4 / col-start 1 / 5 / col-end 8
@@ -165,6 +220,13 @@ body
   gap: 4rem 6rem
   margin-top: 15rem
   margin-bottom: 15rem
+  @include respond(tab-land)
+    grid-area: 5 / col-start 1 / 6 / col-end 8
+  @include respond(tab-port)
+    grid-area: 7 / col-start 1 / 8 / col-end 8
+  @include respond(phone)
+    margin-bottom: 5rem
+    margin-top: 5rem
 
 .card
   background: $color-blue-dark
@@ -196,6 +258,7 @@ body
   margin-left: 2rem
   margin-bottom: 3rem
 
+
 .gallery
   background: $color-blue-dark
   grid-area: 5 / sidebar-end / 6 / full-end
@@ -204,6 +267,11 @@ body
   grid-template-rows: repeat(7, 5vw)
   gap: 1.5rem
   padding: 1.5rem
+  @include respond(tab-land)
+    grid-area: 6 / sidebar-end / 7 / full-end
+  @include respond(tab-port)
+    grid-column: sidebar-end / full-end
+    grid-row: 9 / 10
   &__img
     width: 100%
     height: 100%
